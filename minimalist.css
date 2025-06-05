@@ -1,0 +1,910 @@
+/* Reset standaard browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+/* Algemene stijlen */
+body {
+    font-family: Verdana, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Titel en slogan */
+header {
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+header p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 3px;
+    font-family: Arial, sans-serif
+}
+
+/* Navigatieknop */
+#menu-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 100px;
+    z-index: 9999;
+}
+#menu-toggle:hover {
+    background: none;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Sidebar is standaard verborgen */
+    width: 175px;
+    height: 100%;
+    background: rgb(156, 156, 156);
+    color: white;
+    padding-top: 60px;
+    transition: right 0.3s ease;
+    text-align: center;
+    z-index: 5000;
+}
+
+/* Titel "SHOP" in de zijbalk */
+.sidebar-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: white;
+    margin-top: 20px; /* Pas deze waarde aan om de afstand te wijzigen */
+    text-align: center;
+}
+
+
+#sidebar.active {
+    right: 0; /* Sidebar komt naar voren als de klasse 'active' wordt toegevoegd */
+}
+
+
+/* Zorgt ervoor dat de subcategorieën verborgen blijven */
+.submenu {
+    display: none;
+    list-style: none;
+    padding-left: 0;
+    background: rgb(216, 212, 212);
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+
+/* Stijl van subcategorieën */
+.submenu li {
+    padding: 10px;
+}
+
+/* Zorgt ervoor dat de subcategorieën zichtbaar worden wanneer je er met je muis overheen gaat */
+.dropdown:hover .submenu {
+    display: block;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+#sidebar ul li {
+    padding: 5px 0;
+}
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+#sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Categorieën */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 50px auto;
+    max-width: 1000px;
+}
+
+/* Individuele categorie */
+.category {
+    position: relative;
+    width: 30%;
+}
+.category img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Overlay met tekst */
+.overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.category a {
+    text-decoration: none;
+}
+
+
+/* Categorieën */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 50px auto;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+/* Individuele categorie */
+.category {
+    position: relative;
+    width:60%;
+    overflow: hidden; /* Zorgt ervoor dat de zoom niet buiten het vak komt */
+
+}
+
+/* Overlay tekst binnen de afbeeldingen */
+.overlay-text {
+    position: absolute;
+    bottom: 15px; /* Zorgt ervoor dat de tekst onderaan zit */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px; /* Pas grootte aan op basis van voorbeeld */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif; /* Of vervang met een custom font */
+    background: rgba(0, 0, 0, 0); /* Donkere achtergrond voor leesbaarheid */
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+/* Stijl van de afbeelding */
+.category img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0; /* Verwijdert de afgeronde hoeken */
+    transition: transform 0.4s ease-in-out; /* Zorgt voor een soepele animatie */
+    cursor: pointer;
+}
+
+/* Hover effect - Zoom in */
+.category img:hover {
+    transform: scale(1.05); /* Vergroot de afbeelding een beetje */
+
+    
+}
+.sidebar-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    padding: 10px 0;
+    color: white;
+    display: block;
+    
+}
+
+/* Footer */
+footer {
+    margin-top: 300px; /* Verhoog de waarde als het nog steeds te dicht op staat */
+    padding: 50px;
+    background: #ffffff;
+    font-size: 12px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+
+/* Grijze scheidingslijn */
+.footer-line {
+    width: 80%;
+    height: 9px;
+    background-color: #ccc;
+    margin: 0 auto 30px auto;
+}
+
+
+/* Links aan de linkerkant */
+.footer-links {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #000; /* Zwart maken */
+    font-weight: bold; /* Dikgedrukt */
+    font-size: 12px; /* Klein maken */
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Taalwissel naast de links */
+.footer-language {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.footer-language a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.footer-language a:hover {
+    text-decoration: underline;
+}
+
+/* Copyright aan de rechterkant */
+.footer-copy {
+    font-size: 12px;
+    color: #000;
+    margin-left: auto; /* Zorgt ervoor dat het helemaal naar rechts gaat */
+}
+
+/* Social media icons in the footer */
+.footer-socials {
+    display: flex;
+    gap: 5px; /* Pas deze waarde aan om de ruimte tussen de icons te vergroten of te verkleinen */
+    margin-left: auto;
+    margin-right: var(--footer-socials-margin-right, 70px); /* Zorgt ervoor dat ze naar rechts worden uitgelijnd */
+}
+
+.footer-socials a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer-socials a img:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+}
+
+/* Contactpagina Stijlen */
+.contact-container {
+    text-align: left; /* Zet alles aan de linkerkant */
+    margin: 50px auto;
+    max-width: 800px; /* Zorgt ervoor dat de inhoud niet te breed wordt */
+    padding-left: 20px; /* Kleine inspringing zodat het niet tegen de rand zit */
+}
+
+.contact-container h2 {
+    font-size: 2rem; /* Titel iets kleiner maken */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-options {
+    list-style-type: disc; /* Bullet points toevoegen */
+    padding-left: 20px; /* Zorgt voor een nette inspringing */
+    font-size: 1rem; /* Maak de opties iets kleiner */
+}
+
+.contact-options li {
+    margin: 10px 0;
+}
+
+.contact-options a {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+}
+
+.contact-options a:hover {
+    color: grey;
+}
+/* Contactpagina Layout */
+.contact-container {
+    display: flex; /* Flexbox inschakelen */
+    align-items: center; /* Zorgt voor uitlijning */
+    justify-content: flex-start; /* Inhoud links uitlijnen */
+    max-width: 1000px; /* Zelfde breedte als de categorieën */
+    margin: 50px auto; /* Centraal uitlijnen */
+    gap: 30px; /* Ruimte tussen tekst en afbeelding */
+}
+
+/* Contact Opties aan de Linkerkant */
+.contact-text {
+    flex: 1; /* Neemt beschikbare ruimte in beslag */
+    text-align: left;
+}
+
+/* Model Afbeelding */
+.contact-image {
+    flex: 1; /* Zorgt ervoor dat de afbeelding naast de tekst komt */
+}
+
+.contact-image img {
+    width: 90%; /* Houd dezelfde breedte als de homepage-afbeeldingen */
+    height: auto;
+    border-radius: 10px; /* Optioneel: afronding zoals op de homepage */
+}
+
+/* Container voor menu en winkelwagenknop */
+#top-buttons {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    gap: 10px; /* Ruimte tussen knoppen */
+    z-index: 1000;
+}
+
+/* Stijlen voor menu- en winkelwagenknop */
+#menu-toggle, #cart-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Zorgt ervoor dat de winkelwagenknop altijd zichtbaar blijft */
+/* Zorg ervoor dat de winkelwagenknop niet over de menuknop valt */
+#cart-button {
+    position: fixed;
+    top: 15px;
+    right: 60px; /* Verplaats de winkelwagenknop iets naar links */
+    z-index: 9999;
+}
+
+/* Zorgt ervoor dat menu-knop en winkelwagen naast elkaar staan */
+.nav-buttons {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Ruimte tussen knoppen */
+    z-index: 9999;
+}
+
+/* Stijl voor de menu-knop */
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Stijl voor de winkelwagen-knop */
+#cart-button img {
+    width: 29px; /* Zelfde grootte als menu-knop */
+    height: 29px;
+    cursor: pointer;
+    margin-top: 3px; /* dit duwt hem iets naar beneden */
+}
+
+/* Stijl van de winkelwagenknop in de taskbar */
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+}
+
+
+
+
+/* Algemene stijlen */
+body {
+    font-family: Verdana, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+header p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Productgrid */
+.product-grid {
+    margin-top: 50px; /* Adjust this value as needed */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product h2 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background: #f4f4f4;
+    font-size: 0.9rem;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.footer-line {
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-language {
+    font-weight: bold;
+}
+
+.footer-language a {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer-language a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    color: #000;
+}
+
+
+/* Standaard zwarte icoontjes */
+.nav-buttons button img,
+#cart-button img {
+    filter: invert(0);
+    transition: filter 0.2s ease-in-out;
+}
+
+/* Maak de icoontjes wit als de sidebar open is */
+body.active-sidebar .nav-buttons button img,
+body.active-sidebar #cart-button img {
+    filter: invert(1);
+}
+
+
+/* Zorg dat de menu-knop ook van kleur verandert */
+.nav-buttons button img {
+    width: 37px; /* Zorg dat hij even groot is als de winkelwagen */
+    height: 37px;
+    filter: invert(0);
+    transition: filter 0.2s ease-in-out;
+}
+
+/* Menu-knop wordt wit als de sidebar open is */
+body.active-sidebar .nav-buttons button img {
+    filter: invert(1);
+}
+
+/* Header zoals Bershka, aangepast */
+.main-header {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    border-bottom: 1px solid #000000;
+    background-color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Zet logo en navigatie naast elkaar aan de linkerkant */
+.left-group {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* DRAGS logo kleiner en strakker font */
+.logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+/* Navigatie naast logo */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #777;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: black;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+/* Verwijder standaard marges en paddings overal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Zorg dat er geen witruimte is tussen header en afbeelding */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-image {
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* voorkomt witruimte bij inline elementen zoals img */
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+/*nu de pan animation*/
+.hero {  /* vervang '.hero' met de echte class van je afbeelding */
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image {
+    height: 700px; /* Crop view */
+    overflow: hidden;
+    position: relative;
+}
+
+.image-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    animation: panImage 10s ease-in-out infinite alternate;
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+  
+@keyframes panImage {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -150px; /* Dit bepaalt hoe ver hij omlaag schuift */
+    }
+}
+
+/* Zorg dat de tekst goed gepositioneerd is onderaan het plaatje */
+.hero-image .header-text {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Arial', sans-serif; /* of wat je op index gebruikt */
+    font-size: 2.5rem;
+    z-index: 2;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover-effect exact als bij WOMEN/MEN/KIDS */
+.hero-image .header-text:hover {
+    letter-spacing: 2px;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Zorg dat .image-wrapper correct gepositioneerd is */
+.image-wrapper {
+    position: relative;
+}
+
+/* Optioneel: image fade/zoom animation als je die had */
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    animation: zoom 20s ease-in-out infinite;
+    object-fit: cover;
+}
+
+@keyframes zoom {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+/*vakken voor plaatjes type shi*/
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .category-item {
+    position: relative;
+    display: block;
+    text-align: center;
+    color: rgb(148, 148, 148);
+    text-decoration: none;
+    overflow: hidden;
+  }
+  
+  .category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .category-item span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 1;
+    pointer-events: none;
+  }
+/* Hover effect voor de plaatjes */
+.category-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    transition: 0.3s ease;
+  }
+  
+  
+  .category-item img {
+    transition: transform 0.5s ease;
+  }
+  
+  .category-item:hover img {
+    transform: scale(1.2); /* Zoom-in */
+  }
+  
+  .category-item span {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+  }
+  
+  .category-item:hover span {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 1;
+  }
+  
+  
+
+  .shopping-cart {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.shopping-cart h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+}
+
+.cart-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-info h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.item-info p {
+    margin: 0.25rem 0;
+}
+
+.item-info input[type="number"] {
+    width: 50px;
+    margin-left: 0.5rem;
+}
+
+.remove-btn {
+    background: none;
+    border: 1px solid #000;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.cart-summary {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.cart-summary p {
+    margin: 0.5rem 0;
+}
+
+.cart-summary .total {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.checkout-btn {
+    margin-top: 1rem;
+    background: black;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
