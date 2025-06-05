@@ -10,6 +10,90 @@
         :root {
             --footer-socials-margin-right: 20px; /* Adjust this value as needed */
         }
+        html, body {
+            height: 100%;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Sidebar font verbeteren */
+        #sidebar {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            font-variant: normal;
+            text-transform: none;
+            font-weight: 600; /* semi-bold, niet te dik */
+            letter-spacing: 0.01em; /* subtiele spacing voor clean look */
+            font-size: 5.0em; /* iets groter */
+        }
+        #sidebar a {
+            transition: transform 0.18s cubic-bezier(.4,0,.2,1), border-bottom 0.18s cubic-bezier(.4,0,.2,1);
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+            display: inline-block;
+        }
+        #sidebar a:hover {
+            transform: translateX(6px);
+            border-bottom: 2px solid #e0e0e000;
+            /* geen kleurverandering */
+        }
+        /* Footer socials helemaal rechts onder */
+        footer {
+            margin-top: 0 !important;
+            position: relative;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            position: absolute;
+            right: 120px;
+            bottom: 18px;
+            align-items: center;
+        }
+        .footer-copy {
+            position: absolute;
+            right: 24px;
+            bottom: 18px;
+            white-space: nowrap;
+        }
+        .footer-language {
+            position: static;
+            left: unset;
+            bottom: unset;
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: 400;
+            font-size: 1em;
+            display: inline;
+        }
+        @media (max-width: 700px) {
+            .footer-socials {
+                right: 90px;
+                bottom: 16px;
+                gap: 8px;
+            }
+            .footer-copy {
+                right: 10px;
+                bottom: 16px;
+            }
+            .footer-language {
+                left: unset;
+                bottom: unset;
+                margin-top: 0;
+            }
+        }
+        /* Zorg dat de footer altijd onderaan staat */
+        main, .categories, header {
+            flex-shrink: 0;
+        }
+        .categories {
+            flex: 1 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -29,14 +113,14 @@
 <nav id="sidebar">
     <ul>
         <li class="sidebar-title">    </li>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="winkelwagen.html">SHOPPING CART</a></li> <!-- Toegevoegde winkelwagenknop -->
-        <li class="sidebar-title">    </li>
-        <li class="sidebar-title">SHOP</li> <!-- Toegevoegde koptekst -->
-        <li><a href="dames.html">WOMEN</a></li>
-        <li><a href="heren.html">MEN</a></li>
-        <li><a href="teen.html">KIDS</a></li>        
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="winkelwagen.html">Cart</a></li>
+        <li class="sidebar-title"></li>
+        <li class="sidebar-title">SHOP</li>
+        <li><a href="dames.html">Women</a></li>
+        <li><a href="heren.html">Men</a></li>
+        <li><a href="teen.html">Kids</a></li>        
             </ul>
         </li>
       
@@ -50,8 +134,8 @@
         <p>your Style, your Comfort</p> 
     </header>
 
-<!-- Categorieën met grote afbeeldingen -->
-<section class="categories">
+    <!-- Categorieën met grote afbeeldingen -->
+    <section class="categories">
     <div class="category">
         <a href="dames.html">
             <img src="dames.jpg" alt="Dames Mode">
@@ -83,10 +167,9 @@
             <span>•</span>
             <a href="#">Sitemap</a>
             <span>•</span>
-            <a href="#">    </a>
-        </div>
-        <div class="footer-language">
-            <a href="#">English</a> | <a href="#">Nederlands</a>
+            <span class="footer-language">
+                <a href="#">English</a> | <a href="#">Nederlands</a>
+            </span>
         </div>
         <div class="footer-socials">
             <a href="#"><img src="facebook.png" alt="Facebook"></a>

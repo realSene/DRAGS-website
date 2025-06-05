@@ -3,44 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - DRAGS</title>
+    <title>DRAGS - CONTACT PAGE</title>
     <link rel="stylesheet" href="minimalist.css">
     <script defer src="javascript.js"></script>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+        /* Sidebar font verbeteren */
+        #sidebar {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            font-variant: normal;
+            text-transform: none;
+            font-weight: 600; /* semi-bold, niet te dik */
+            letter-spacing: 0.01em; /* subtiele spacing voor clean look */
+            font-size: 5.0em; /* iets groter */
+        }
+        #sidebar a {
+            transition: transform 0.18s cubic-bezier(.4,0,.2,1), border-bottom 0.18s cubic-bezier(.4,0,.2,1);
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+            display: inline-block;
+        }
+        #sidebar a:hover {
+            transform: translateX(6px);
+            border-bottom: 2px solid #e0e0e000;
+            /* geen kleurverandering */
+        }
+        /* Logo link moet eruitzien als tekst, niet als link */
+        .logo {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .logo:visited {
+            color: inherit;
+        }
+    </style>
+    <style>
         :root {
-            --footer-socials-margin-right: 20px; /* Adjust this value as needed */
+            --footer-socials-margin-right: 70px; /* Adjust this value as needed */
+        }
+        /* Email form styling */
+        .email-signup-container {
+            background: #fff;
+            color: #000000;
+            border: 0.5px solid #000000;
+            border-radius: 6px;
+            padding: 12px 10px;
+            width: 300px;
+            max-width: 92vw;
+            margin: 24px 0 4px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            z-index: 1;
+            position: static;
+        }
+        .email-signup-container h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 0.93em;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+        .email-signup-form {
+            width: 100%;
+            display: flex;
+            gap: 6px;
+        }
+        .email-signup-form input[type="email"] {
+            flex: 1;
+            padding: 5px 7px;
+            border: 1px solid #000;
+            border-radius: 3px;
+            font-size: 0.9em;
+            outline: none;
+        }
+        .email-signup-form button {
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 11px;
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.18s cubic-bezier(.4,0,.2,1), background 0.18s;
+        }
+        .email-signup-form button:hover {
+            background: #222;
+            transform: scale(1.07);
+        }
+        /* Popup styling */
+        .popup-message {
+            position: fixed;
+            top: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 18px 32px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+        .popup-message.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .popup-close {
+            margin-left: 18px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        /* Footer: verwijder evt. extra margin-top */
+        footer {
+            margin-top: 0 !important;
+            position: relative;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            position: absolute;
+            right: 120px;
+            bottom: 18px;
+            align-items: center;
+        }
+        .footer-copy {
+            position: absolute;
+            right: 24px;
+            bottom: 18px;
+            white-space: nowrap;
+        }
+        .footer-language {
+            position: static;
+            left: unset;
+            bottom: unset;
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: 400;
+            font-size: 1em;
+            display: inline;
+        }
+        @media (max-width: 700px) {
+            .footer-socials {
+                right: 90px;
+                bottom: 16px;
+                gap: 8px;
+            }
+            .footer-copy {
+                right: 10px;
+                bottom: 16px;
+            }
+            .footer-language {
+                left: unset;
+                bottom: unset;
+                margin-top: 0;
+            }
+        }
+    </style>
+    <style>
+        :root {
+            --footer-socials-margin-right: 70px; /* Adjust this value as needed */
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigatieknop -->
+<!-- Navigatieknoppen (Menu + Winkelwagen) -->
+<div class="nav-buttons">
     <button id="menu-toggle">
         <img src="menu_knop.png" alt="Menu" class="menu-icon">
     </button>
     
+    <a href="winkelwagen.html" id="cart-button">
+        <img src="winkelwagen_transparent.png" alt="Winkelwagen" class="cart-icon">
+    </a>
+</div>
 
-<!-- Zijbalk Menu (Rechts) -->
+<!-- Zijbalk Menu -->
 <nav id="sidebar">
     <ul>
+        <li class="sidebar-title">    </li>
         <li><a href="index.html">Home</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li class="dropdown">
-            <a href="#">Shop ▾</a>
-            <ul class="submenu">
-                <li><a href="dames.html">Women</a></li>
-                <li><a href="heren.html">Men</a></li>
-                <li><a href="teen.html">Kids</a></li>
-            </ul>
-        </li>
+        <li><a href="winkelwagen.html">Cart</a></li>
+        <li class="sidebar-title"></li>
+        <li class="sidebar-title">SHOP</li>
+        <li><a href="dames.html">Women</a></li>
+        <li><a href="heren.html">Men</a></li>
+        <li><a href="teen.html">Kids</a></li>
     </ul>
 </nav>
 
-    <!-- Titel en slogan (Fix toegevoegd) -->
-    <header>
-        <h1>D R A G S</h1>
-        <p>your Style, your Comfort</p>
-    </header>
+<main>
+    
+   <!-- Nieuwe header zoals Bershka -->
+   <header class="main-header">
+    <div class="left-group">
+        <a href="index.html" class="logo">DRAGS</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="dames.html" class="nav-link">WOMEN</a></li>
+                <li><a href="heren.html" class="nav-link">MEN</a></li>
+                <li><a href="teen.html" class="nav-link">KIDS</a></li>                
+            </ul>
+        </nav>
+        
+    </div>
+    
+</header>
 
  <!-- Contactpagina Inhoud -->
 <div class="contact-container">
@@ -62,6 +253,21 @@
     </div>
 </div>
 
+    <!-- Email signup form (kleiner, onderaan, niet fixed) -->
+    <div class="email-signup-container">
+        <h3>Blijf op de hoogte!</h3>
+        <form class="email-signup-form" id="emailSignupForm" autocomplete="off">
+            <input type="email" id="signupEmail" placeholder="Vul je e-mailadres in" required>
+            <button type="submit">Verstuur</button>
+        </form>
+    </div>
+
+    <!-- Popup message -->
+    <div id="popupMessage" class="popup-message">
+        <span id="popupText"></span>
+        <button class="popup-close" id="popupCloseBtn" aria-label="Sluiten">&times;</button>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="footer-line"></div>
@@ -74,11 +280,11 @@
             <span>•</span>
             <a href="#">Sitemap</a>
             <span>•</span>
-            <a href="#">    </a>
+            <span class="footer-language">
+                <a href="#">English</a> | <a href="#">Nederlands</a>
+            </span>
         </div>
-        <div class="footer-language">
-            <a href="#">English</a> | <a href="#">Nederlands</a>
-        </div>
+        <!-- socials en copyright nu rechts onder -->
         <div class="footer-socials">
             <a href="#"><img src="facebook.png" alt="Facebook"></a>
             <a href="#"><img src="twitter.png" alt="Twitter"></a>
@@ -91,4 +297,42 @@
 
 </body>
 </html>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('emailSignupForm');
+    const emailInput = document.getElementById('signupEmail');
+    const popup = document.getElementById('popupMessage');
+    const popupText = document.getElementById('popupText');
+    const popupClose = document.getElementById('popupCloseBtn');
+    let popupTimeout = null;
+
+    function showPopup(message) {
+        popupText.textContent = message;
+        popup.classList.add('visible');
+        // Remove any previous timeout
+        if (popupTimeout) clearTimeout(popupTimeout);
+        popupTimeout = setTimeout(() => {
+            popup.classList.remove('visible');
+        }, 3000);
+    }
+
+    popupClose.addEventListener('click', function() {
+        popup.classList.remove('visible');
+        if (popupTimeout) clearTimeout(popupTimeout);
+    });
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        // Simple email regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showPopup('Ongeldig e-mailadres');
+        } else {
+            showPopup('Bedankt!');
+            form.reset();
+        }
+    });
+});
+</script>
 

@@ -14,8 +14,89 @@
             flex-direction: column;
         }
 
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
         main {
             flex: 1;
+        }
+        /* Sidebar font verbeteren */
+        #sidebar {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            font-variant: normal;
+            text-transform: none;
+            font-weight: 600; /* semi-bold, niet te dik */
+            letter-spacing: 0.01em; /* subtiele spacing voor clean look */
+            font-size: 5.0em; /* iets groter */
+        }
+        #sidebar a {
+            transition: transform 0.18s cubic-bezier(.4,0,.2,1), border-bottom 0.18s cubic-bezier(.4,0,.2,1);
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+            display: inline-block;
+        }
+        #sidebar a:hover {
+            transform: translateX(6px);
+            border-bottom: 2px solid #e0e0e000;
+            /* geen kleurverandering */
+        }
+        /* Logo link moet eruitzien als tekst, niet als link */
+        .logo {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .logo:visited {
+            color: inherit;
+        }
+        /* Footer socials helemaal rechts onder */
+        footer {
+            margin-top: 0 !important;
+            position: relative;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            position: absolute;
+            right: 120px;
+            bottom: 18px;
+            align-items: center;
+        }
+        .footer-copy {
+            position: absolute;
+            right: 24px;
+            bottom: 18px;
+            white-space: nowrap;
+        }
+        .footer-language {
+            position: static;
+            left: unset;
+            bottom: unset;
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: 400;
+            font-size: 1em;
+            display: inline;
+        }
+        @media (max-width: 700px) {
+            .footer-socials {
+                right: 90px;
+                bottom: 16px;
+                gap: 8px;
+            }
+            .footer-copy {
+                right: 10px;
+                bottom: 16px;
+            }
+            .footer-language {
+                left: unset;
+                bottom: unset;
+                margin-top: 0;
+            }
         }
     </style>
     <style>
@@ -41,12 +122,59 @@
 <nav id="sidebar">
     <ul>
         <li class="sidebar-title">    </li>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="winkelwagen.html">WINKELWAGEN</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="winkelwagen.html">Cart</a></li>
+        <li class="sidebar-title"></li>
         <li class="sidebar-title">SHOP</li>
-        <li><a href="dames.html">WOMEN</a></li>
-        <li><a href="heren.html">MEN</a></li>
-        <li><a href="teen.html">KIDS</a></li>
+        <li><a href="dames.html">Women</a></li>
+        <li><a href="heren.html">Men</a></li>
+        <li><a href="teen.html">Kids</a></li>
     </ul>
 </nav>
+
+<main>
+    <!-- Zet hier je hoofdinhoud neer, bijvoorbeeld: -->
+    <!-- Nieuwe header zoals Bershka -->
+    <header class="main-header">
+        <div class="left-group">
+            <a href="index.html" class="logo">DRAGS</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dames.html" class="nav-link active">WOMEN</a></li>
+                    <li><a href="heren.html" class="nav-link">MEN</a></li>
+                    <li><a href="teen.html" class="nav-link">KIDS</a></li>                
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Voeg hier eventueel meer inhoud toe voor de damespagina -->
+</main>
+
+<footer>
+    <div class="footer-line"></div>
+    <div class="footer-links">
+        <a href="#">Algemene voorwaarden</a>
+        <span>•</span>
+        <a href="#">Privacybeleid</a>
+        <span>•</span>
+        <a href="#">Cookies</a>
+        <span>•</span>
+        <a href="#">Sitemap</a>
+        <span>•</span>
+        <span class="footer-language">
+            <a href="#">English</a> | <a href="#">Nederlands</a>
+        </span>
+    </div>
+    <div class="footer-socials">
+        <a href="#"><img src="facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="pinterest.png" alt="Pinterest"></a>
+        <a href="#"><img src="tiktok.png" alt="TikTok"></a>
+    </div>
+    <div class="footer-copy">© 2025 DRAGS</div>
+</footer>
+
+</body>
+</html>
