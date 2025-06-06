@@ -1,26 +1,34 @@
 [
   {
-    "ID": "shirttest001",
-    "Titel": "T-Shirt print met korte mouwen",
-    "Prijs": "15,99",
-    "Kleuren": "Blauw",
-    "Beschrijving": "Zachte katoenen t-shirt met weerbare print",
-    "AfbeeldingUrl": "product-gridtest.jpg"
+    "ID": "broek001",
+    "Titel": "Baggy Jeans",
+    "Prijs": "35,99",
+    "Kleuren": "Washed Blue",
+    "Beschrijving": "Baggy Wide Pipe jeans",
+    "AfbeeldingUrl": "broekmen1.jpg"
   },
   {
-    "ID": "shirttest002",
-    "Titel": "t shirt test 2",
+    "ID": "broek002",
+    "Titel": "Loose Fit Baggy Jeans",
     "Prijs": "25,99",
-    "Kleuren": "zwart",
-    "Beschrijving": "test test test 2",
-    "AfbeeldingUrl": "product-gridtest2.jpg"
+    "Kleuren": "Denim Black",
+    "Beschrijving": "Straight/Baggy Jeans",
+    "AfbeeldingUrl": "broekmen2.jpg"
   },
   {
-    "ID": "shirttest003",
-    "Titel": "test3",
-    "Prijs": 32,
-    "Kleuren": "roze",
-    "Beschrijving": "aiodekjhrjkeh",
-    "AfbeeldingUrl": "product-gridtest3.jpg"
+    "ID": "broek003",
+    "Titel": "Super Baggy Jeans",
+    "Prijs": "45,99",
+    "Kleuren": "Washed Grey",
+    "Beschrijving": "Comfortable Demin Baggy Jeans with stitched back pockets",
+    "AfbeeldingUrl": "broekmen3.jpg"
+  },
+  {
+    "ID": "broek004",
+    "Titel": "Patched Baggy Jeans",
+    "Prijs": "49,99",
+    "Kleuren": "Washed Brown/Grey",
+    "Beschrijving": "Comfortable baggy jeans with stitched side decor patches made from real fur",
+    "AfbeeldingUrl": "broekmen4.jpg"
   }
 ]
