@@ -19,4 +19,28 @@ document.addEventListener("DOMContentLoaded", function () {
     sidebar.addEventListener("click", function (event) {
         event.stopPropagation();
     });
+
+    // Producten inladen
+    fetch('producten.json')
+        .then(response => response.json())
+        .then(products => {
+            console.log(products); // Voeg deze regel toe
+            const grid = document.querySelector('.product-grid');
+            grid.innerHTML = '';
+            products.forEach(product => {
+                const card = document.createElement('div'); // <-- deze regel toevoegen!
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <img src="${product.AfbeeldingUrl.trim()}" alt="${product.Titel.trim()}">
+                    <div class="product-info">
+                        <span class="product-title">${product.Titel.trim()}</span>
+                        <span class="product-price">€${product.Prijs.toString().trim()}</span>
+                        <span class="product-sub">3 Kleuren</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        });
+        
+
 });

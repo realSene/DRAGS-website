@@ -1,0 +1,26 @@
+[
+  {
+    "ID": "shirttest001",
+    "Titel": "T-Shirt print met korte mouwen",
+    "Prijs": "15,99",
+    "Kleuren": "Blauw",
+    "Beschrijving": "Zachte katoenen t-shirt met weerbare print",
+    "AfbeeldingUrl": "product-gridtest.jpg"
+  },
+  {
+    "ID": "shirttest002",
+    "Titel": "t shirt test 2",
+    "Prijs": "25,99",
+    "Kleuren": "zwart",
+    "Beschrijving": "test test test 2",
+    "AfbeeldingUrl": "product-gridtest2.jpg"
+  },
+  {
+    "ID": "shirttest003",
+    "Titel": "test3",
+    "Prijs": 32,
+    "Kleuren": "roze",
+    "Beschrijving": "aiodekjhrjkeh",
+    "AfbeeldingUrl": "product-gridtest3.jpg"
+  }
+]

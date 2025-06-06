@@ -17,7 +17,7 @@ img {
 
 /* Algemene stijlen */
 body {
-    font-family: Verdana, Arial, sans-serif;
+    font-family: 'Inter', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
@@ -907,4 +907,205 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* GET THE LOOK row styling */
+.get-the-look-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100vw;
+    padding: 32px 0 0 0;
+    margin-bottom: 24px;
+    background: #fff;
+    font-family: 'Inter', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.get-the-look-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-left: 32px;
+    flex-wrap: wrap;
+}
+
+.arrow {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #000;
+    margin-right: 18px;
+    margin-bottom: 2px;
+    line-height: 1;
+}
+
+.get-the-look-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 0.01em;
+    margin-right: 18px;
+    line-height: 1;
+    font-family: 'Inter', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.get-the-look-desc {
+    font-size: 1.05rem;
+    color: #000;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    margin-left: 0;
+    margin-bottom: 2px;
+    line-height: 1.2;
+    font-family: 'Inter', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.drags-link {
+    color: #000;
+    font-weight: 500;
+    font-family: 'Inter', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    text-decoration: underline;
+    transition: color 0.2s;
+    letter-spacing: 0.01em;
+}
+
+.drags-link:hover {
+    color: #888;
+}
+
+/* Rate us! button styling */
+.rate-us-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    border: 2px solid #000;
+    border-radius: 22px;
+    background: #fff;
+    color: #000;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, border 0.18s;
+    text-decoration: none;
+    margin-right: 32px;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    box-shadow: none;
+    font-family: 'Inter', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.rate-us-btn:hover {
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+}
+
+/* Product grid compacter en cards iets groter en strakker font */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 36px;
+    padding: 36px 24px;
+    margin: 0 auto;
+    max-width: 1600px;
+    font-family: 'Inter', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+/* Vierkante, ruime product-card */
+.product-card {
+    background: #ffffff00;
+    border: none;
+    border-radius: 0;
+    width: 270px;
+    box-shadow: none;
+    overflow: visible;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+
+
+/* Afbeelding met veel witruimte */
+.product-card img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    background: #f6f6f6;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.22s;
+}
+
+
+/* Info onder de afbeelding, links uitgelijnd */
+.product-info {
+    padding: 18px 0 0 0;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.product-title {
+    font-size: 1.04rem;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 2px;
+    line-height: 1.3;
+    font-family: inherit;
+    letter-spacing: 0.01em;
+}
+
+.product-price {
+    font-size: 0.90rem;
+    font-weight: 400; /* NIET dikgedrukt */
+    color: #222;
+    font-family: inherit;
+    letter-spacing: 0.01em;
+    margin-bottom: 2px;
+}
+
+.product-sub {
+    font-size: 0.93rem;
+    color: #888;
+    font-weight: 400;
+    margin-top: 2px;
+    font-family: inherit;
+}
+
+/* Responsive voor mobiel */
+@media (max-width: 900px) {
+    .get-the-look-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 24px 0 0 0;
+    }
+    .get-the-look-left {
+        margin-left: 16px;
+        gap: 10px;
+    }
+    .rate-us-btn {
+        margin-right: 16px;
+        margin-top: 18px;
+        margin-bottom: 0;
+    }
+    .get-the-look-title {
+        font-size: 1.4rem;
+    }
+    .get-the-look-desc {
+        font-size: 0.95rem;
+    }
+    .arrow {
+        font-size: 1.4rem;
+    }
 }
