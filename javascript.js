@@ -21,15 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Producten inladen
-    fetch('producten.json')
+    fetch('pants.json')
         .then(response => response.json())
         .then(products => {
             console.log(products); // Voeg deze regel toe
             const grid = document.querySelector('.product-grid');
             grid.innerHTML = '';
             products.forEach(product => {
-                const card = document.createElement('div'); // <-- deze regel toevoegen!
+                const card = document.createElement('a'); // Gebruik <a> in plaats van <div>
                 card.className = 'product-card';
+                card.href = `product.html?id=${product.ID}`; // Link naar productpagina
                 card.innerHTML = `
                     <img src="${product.AfbeeldingUrl.trim()}" alt="${product.Titel.trim()}">
                     <div class="product-info">

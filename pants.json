@@ -30,5 +30,29 @@
     "Kleuren": "Washed Brown/Grey",
     "Beschrijving": "Comfortable baggy jeans with stitched side decor patches made from real fur",
     "AfbeeldingUrl": "broekmen4.jpg"
+  },
+  {
+    "ID": "broek005",
+    "Titel": "Super Baggy Jeans",
+    "Prijs": "39,99",
+    "Kleuren": "Washed Black",
+    "Beschrijving": "All wide ratio pant sleeves with adjustable waisteband",
+    "AfbeeldingUrl": "broekmen5.jpg"
+  },
+  {
+    "ID": "broek006",
+    "Titel": "Jogger Jeans",
+    "Prijs": "35,99",
+    "Kleuren": "Light Blue",
+    "Beschrijving": "Comfotabel soft lightweight jeans with elastic waisteband",
+    "AfbeeldingUrl": "broekmen6.jpg"
+  },
+  {
+    "ID": "broek007",
+    "Titel": "Tailoring Joggers",
+    "Prijs": "29,99",
+    "Kleuren": "Creme/Beige",
+    "Beschrijving": "Lightweight tailored joggers",
+    "AfbeeldingUrl": "broekmen7.jpg"
   }
 ]

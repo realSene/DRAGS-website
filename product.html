@@ -121,6 +121,24 @@
         <img src="winkelwagen_transparent.png" alt="Winkelwagen" class="cart-icon">
     </a>
 </div>
+<main>
+    
+   <!-- Nieuwe header zoals Bershka -->
+   <header class="main-header">
+    <div class="left-group">
+        <a href="index.html" class="logo">DRAGS</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="dames.html" class="nav-link">WOMEN</a></li>
+                <li><a href="heren.html" class="nav-link active">MEN</a></li>
+                <li><a href="teen.html" class="nav-link">KIDS</a></li>                
+            </ul>
+        </nav>
+        
+    </div>
+    
+</header>
+
 
 <!-- Zijbalk Menu -->
 <nav id="sidebar">
@@ -136,3 +154,49 @@
         <li><a href="teen.html">Kids</a></li>
     </ul>
 </nav>
+
+<main>
+    <div class="product-detail-container">
+        <div class="product-image-large" id="product-image-large"></div>
+        <div class="product-info-large" id="product-info-large">
+            <!-- Hier komen: titel, prijs, kleur, maten, add-to-cart, beschrijving -->
+            <button class="add-to-cart-btn">ADD TO CART</button>
+            <div class="product-description-large"><!-- Beschrijving komt hier dynamisch via JS of statisch --></div>
+        </div>
+    </div>
+</main>
+
+<div class="delivery-info-box floating-delivery-info">
+    <div class="delivery-row">
+        <span class="delivery-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h13v12H3z" stroke="#222" stroke-width="1.5"/><path d="M16 10h4l1 2.5V18h-5v-8z" stroke="#222" stroke-width="1.5"/><circle cx="7.5" cy="18" r="1.5" fill="#fff" stroke="#222" stroke-width="1.5"/><circle cx="17.5" cy="18" r="1.5" fill="#fff" stroke="#222" stroke-width="1.5"/></svg>
+        </span>
+        <span class="delivery-text">Afhalen in de winkel</span>
+        <span class="delivery-free">GRATIS</span>
+    </div>
+    <div class="delivery-row">
+        <span class="delivery-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 7h13v10H3z" stroke="#222" stroke-width="1.5"/><path d="M16 11h4l1 2.5V17h-5v-6z" stroke="#222" stroke-width="1.5"/><circle cx="7.5" cy="17" r="1.5" fill="#fff" stroke="#222" stroke-width="1.5"/><circle cx="17.5" cy="17" r="1.5" fill="#fff" stroke="#222" stroke-width="1.5"/><path d="M7 12h5" stroke="#222" stroke-width="1.2"/></svg>
+        </span>
+        <span class="delivery-text">Standaardverzending naar huisadres</span>
+        <span class="delivery-free">GRATIS</span>
+    </div>
+    <div class="delivery-row delivery-note">
+        <span></span>
+        <span class="delivery-small">*Voor bestellingen boven 50,00&nbsp;€</span>
+        <span></span>
+    </div>
+</div>
+
+<script src="product.js"></script>
+
+<a href="menjeans.html" class="back-arrow-btn" aria-label="Terug naar menjeans">
+    <span class="arrow-circle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            <polyline points="10,8 14,12 10,16" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </span>
+</a>
+
+</body>
+</html>
